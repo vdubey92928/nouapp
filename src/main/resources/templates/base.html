@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en"  th:fragment="layout(content)">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to NOU E-Gyan Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="icon" type="image/png" href="image/logosmall.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<style>
+		a {
+		  text-decoration: none !important; 
+		  color: inherit !important;     
+		}
+		body {
+		    background-color: #f8f9fa;
+		}
+		.scroll{
+			overflow: auto;
+			overflow-x: auto;
+		}
+		.scroll::-webkit-scrollbar{
+		   display: none;
+		} 
+		.form-container {
+		    background-color: #ffffff;
+		    padding: 20px;
+		    border-radius: 10px;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		    margin-top: 30px;
+		}
+		.form-title {
+		    text-align: center;
+		    color: #007bff;
+		    font-weight: bold;
+		    margin-bottom: 20px;
+		}
+		label {
+		    font-weight: 500;
+		}
+		.form-control:focus {
+		    border-color: #007bff;
+		    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+		}
+		.btn-success {
+		    margin: 10px 0;
+		}
+		.msg-success {
+		    color: green;
+		    text-align: center;
+		    font-weight: bold;
+		    margin-bottom: 10px;
+		}
+		
+		textarea {
+		    width: 100%;
+		    border: 1px solid #ced4da;
+		    border-radius: 5px;
+		    padding: 10px;
+		}
+		table{
+			border: 0px solid white !important;
+		}
+		tr{
+			margin-left: 40px;
+			padding-left: 40%;
+			background-color: lightgray;
+		}
+		.course-name{
+		    font-weight: 700;
+			color: #900C3F;
+		}
+		.poster {
+            background: url('image/banner.jpg') no-repeat center center/cover;
+			height: 50vh;
+			color: white;
+		}
+		
+		.image.con{
+			background: no-repeat center center/cover;
+		}
+		.form-container {
+		       background-image: url('image/logo.png'); /* Path to your background image */
+		       background-size: cover; /* Ensures the image covers the entire container */
+		       background-position: center; /* Centers the image */
+		       background-repeat: no-repeat; /* Prevents the image from repeating */
+		       padding: 20px; /* Adds space inside the container */
+		       border-radius: 10px; /* Gives rounded corners to the form */
+		       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for a nice effect */
+		       color: white; /* Adjust text color to contrast with the background */
+		   }
+	
+		.poster-text{
+			width: 40%;
+			position: absolute;
+			top: 90%;
+			left: 50%;
+			text-align: left;
+			color: blue;
+		}
+		
+		.para{
+			width: 50%;
+			position: absolute;
+			top: 110%;
+			left: 40%;
+			text-align: left;
+			color: blue;
+		}
+		
+	    .card {
+	        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	        border: none;
+	        border-radius: 10px;
+	    }
+		
+
+	    .circle-number {
+	        position: absolute;
+	        top: -25px;
+	        left: 50%;
+	        transform: translateX(-50%);
+	        background-color: #900C3F;
+	        color: white;
+	        border-radius: 50%;
+	        width: 50px;
+	        height: 50px;
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+	        font-size: 1.5rem;
+	        font-weight: bold;
+	    }
+
+	    .card-body {
+	        position: relative;
+	        padding-top: 40px;
+	    }
+
+	    .btn-custom {
+	        background-color: #FF9F00;
+	        border: none;
+	        font-weight: bold;
+	        color: white;
+	    }
+
+	    .btn-custom:hover {
+	        background-color: #FF7700;
+	    }
+	</style>
+	
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+        <!-- top 1 start -->
+      <div class="row py-2" style="background: rgb(146, 24, 24); border-bottom: 2px dotted yellowgreen;">
+         <div class="col-sm-1 "> </div>
+         <div class="col-sm-6 text-light" style="font-size:18px;">
+          <span><i class="fa-solid fa-phone fa-spin fa-spin-reverse"></i>+91 7080102007 &emsp;&emsp;<i class="fa-solid fa-envelope"></i> nouegyanhelp@gmail.com</span>
+         </div>
+         <div class="col-sm-5 "></div>
+      </div>
+        <!-- top 1 end -->
+
+        <!-- top 2 start -->
+      <div class="row " style="background: rgb(146, 24, 24); border-bottom: 3px dotted yellowgreen;">
+        <div class="col-sm-1"></div>
+		<div class="col-sm-10 py-1" style="text-align: center; font-size: 19px;color: white;">
+          <p style="font-size:15px;"><b>For Admission and Examination related query, Kindly call on University helpline Numbers 9341508580,9341508577,0612-2201013 & 0612-2206916</b></p>
+        </div>
+		<div class="col-sm-1"></div>
+      </div>
+        <!-- top 2 end-->
+
+        <!-- logo section start -->
+      <div class="row" >
+        <div class="col-sm-1"></div>
+		<div class="col-sm-1">
+          <img src="image/logosmall.png" alt="" >
+        </div>
+		<div class="col-sm-1"></div>
+        <div class="col-sm-5 " >
+          <h3 style="color: darkred;">NOU e-Gyan PORTAL</h3>
+          <h5>( A Concept by Nalanda Open University)</h5>
+        </div>
+        <div class="col-sm-4 d-flex" style="font-size: 30px;"> 
+		      <div class="mx-2 my-auto"><i class="fa-brands fa-twitter fa-fade"></i></div>	
+			  <div class="mx-2 my-auto"><i class="fa-brands fa-facebook fa-fade"></i></div>	
+			  <div class="mx-2 my-auto"><i class="fa-brands fa-instagram fa-fade"></i></div>	
+			  <div class="mx-2 my-auto"><i class="fa-brands fa-linkedin fa-fade"></i></div>	
+			  <div class="mx-2 my-auto"><i class="fa-brands fa-youtube fa-fade"></i></div>	
+	    </div>
+      
+		
+      </div>
+        <!-- logo section end -->
+
+
+
+      <!-- dynamic layout space start -->
+		  <div class="row mt-2" style="min-height:700px; height:auto;">
+			<div th:replace="${content}"></div>
+		  </div>
+      <!-- space end -->
+	  
+	 <!---footer start----->
+	 
+	 <footer id="dk-footer" class="dk-footer  mt-4" style="background-color: #900C3F;">
+
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-3 footer-about text-center">
+	                    <a href="#" class="footer-img">
+	                        <img src="image/logo1.png" alt="footer_logo" class="img-fluid w-50 h-50">
+	                    </a>
+	                    <p class="text-justify">
+	                        Nalanda Open University is a State Open University duly established under the Act of Bihar Government and is also recognized by Distance Education Council, IGNOU, Maidan Garhi, New Delhi.
+	                    </p>
+	                   <div class="d-flex mx-auto ms-5 pb-3" style="font-size: 20px;">
+						<div class="mx-2 my-auto"><i class="fa-brands fa-twitter fa-fade"></i></div>	
+						<div class="mx-2 my-auto"><i class="fa-brands fa-facebook fa-fade"></i></div>	
+						<div class="mx-2 my-auto"><i class="fa-brands fa-instagram fa-fade"></i></div>	
+						<div class="mx-2 my-auto"><i class="fa-brands fa-linkedin fa-fade"></i></div>	
+						<div class="mx-2 my-auto"><i class="fa-brands fa-youtube fa-fade"></i></div>
+					   </div>
+	    
+	                            
+	                </div>
+	    
+	    
+	                <div class="col-lg-3 my-useful">
+	                <h3>Useful Links</h3>
+	                <span class="animate-border border-black mb-4"> </span>
+	                    <ul type="none">
+	                        <li>
+	                            <a href="/index">Home</a>
+	                        </li>
+	                        <li>
+	                            <a href="/aboutus">About Portal</a>
+	                        </li>
+	                        <li>
+	                            <a href="#">Services</a>
+	                        </li>
+	                        <li>
+	                            <a href="/contactus">Contact us</a>
+	                        </li>
+	                        <li>
+	                            <a href="/aboutus">Courses</a>
+	                        </li>
+	                        <li>
+	                            <a href="#">Study Centre</a>
+	                        </li>
+	                    </ul>
+	                </div>
+	    
+	    
+	                <div class="col-lg-3 con-info">
+	                <h3>Contact info</h3>
+	                <span class="animate-border border-black mb-4"></span>
+	                <h3 class="con-info-add"><i class="bi bi-geo-alt-fill"></i> NOU</h3>
+	                <p>2nd/3rd Floor, Biscomaun Bhawan, Gandhi Maidan, Patna 800 001 (BIHAR).</p>
+	                <br>
+	                <h3 class="con-info-add"><i class="fa fa-volume-control-phone"></i> +91 7080102007</h3>
+	                <p>Give us a call</p>
+	                </div>
+	    
+	                <div class="col-lg-3 my-subs">
+	                <h3>Subscribe</h3>
+	                <span class="animate-border border-black mb-4"></span>
+	                    <p>Fill the detail below to receive the manual of the NOU e-Gyan Portal </p>
+	                    <form action="#">
+	                        <div class="form-row">
+	                            <div class="col dk-footer-form">
+	                                <input type="email" class="form-control" placeholder="Email Address">
+	                                <button type="submit">
+	                                    <i class="fa-brands fa-send"></i>
+	                                </button>
+	                            </div>
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	            
+	        </div>
+	    
+	       
+	    
+	 <!---footer end-->
+	 <div class="container pt-3">
+	 <div class="row mt-2">
+	 		<div class="col-sm-6 pb-4" style="color:white; background-color: navy; font-size: 30px; text-align: center;">
+	 			Copyright &copy; Nalanda Open University
+	 		</div>
+	 		<div class="col-sm-6 pb-4" style="color:white; background-color: black; font-size: 30px; text-align: center;">
+	 			Developed by:- Adarsh Pal  & teams. 
+	 		</div>
+	 	</div>
+	   </div>
+	   </footer>
+	   </div>
+
+	   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	   <script>
+	     AOS.init();
+	   </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

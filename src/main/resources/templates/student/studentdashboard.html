@@ -1,0 +1,60 @@
+<html th:replace="~{student/studentbase::layout(~{::section})}">
+	<head>
+	</head>
+	<body>
+		<section>
+			<div class="row">
+				<h1 class="text-center text-dark">Message from student dashboard</h1>
+				<div class="col-sm-10 mx-auto shadow bg-warning bg-opacity-50">
+					<div class="row">
+						<div class="col-md-5 ">
+							<div class="text-center" th:if="${st.profilepic}">
+								<img alt="image not found" class="rounded-circle mt-3 mb-2" height="150px" weight="150px" th:src="@{'/profile/'+${st.profilepic}}" />
+							</div>
+							<div class="text-center" th:unless="${st.profilepic}">
+								<img alt="image not found" class=" rounded-circle  mt-3 mb-2" height="150px" weight="150px" src="../image/user.jpg" />
+							</div>
+							
+							<div class="p-3">
+								<form style="display: flex; justify-content: space-around;" class="px-4" method="post" enctype="multipart/form-data">
+									<input type="file" name="file" class="form-control w-50 mx-1" required/>
+									<button class="btn btn-primary w-50 mx-1" type="submit">Upload Pic</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-7 my-auto text-center" style="font-size: 40px;">
+							<div class="">
+								<table>
+									<tr class="my-2">
+										<th>Name :</th>
+										<td th:text="${st.name}"></td>
+									</tr>
+									<tr class="my-2">
+										<th>Enrollment No :</th>
+										<td th:text="${st.enrollmentNo}"></td>
+									</tr>
+									<tr class="my-2">
+										<th>Contact No :</th>
+										<td th:text="${st.contactNo}"></td>
+									</tr>
+									<tr class="my-2">
+										<th>Email :</th>
+										<td th:text="${st.emailAddress}"></td>
+									</tr>
+									<tr class="my-2">
+										<th>Course :</th>
+										<td th:text="${st.program}"></td>
+									</tr>
+									<tr class="my-2">
+										<th>Branch :</th>
+										<td th:text="${st.branch}"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

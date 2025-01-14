@@ -1,0 +1,175 @@
+<html th:replace="base::layout(~{::section})">
+	<head>
+		
+	</head>
+	<body>
+		<section>
+			      <!-- navbar start -->
+				<div class="poster text-white">
+				  <div class="row mt-3 py-2" style="background: gray;background-color: rgba(40, 10, 10, 0.7);height: 15vh;">
+			          <nav class="navbar navbar-expand-lg">
+			          <div class="col-sm-1"></div>
+			          <div class="col-sm-3">
+			          <h4>WELCOME STUDENTS</h4>
+			        </div>
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-7 " >          
+			          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			            <span class="navbar-toggler-icon"></span>
+			          </button>
+			          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			            <ul class="navbar-nav  mb-2 mb-lg-0 ">
+			              <li class="nav-item">
+			                <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/aboutus">Courses</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/registration">Registration</a>
+			              </li>
+			              <li class="nav-item">
+			               <a class="nav-link text-light" href="/stulogin">Student Login</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/adminlogin">Admin Login</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/contactus">Contact Us</a>
+			              </li>
+			            </ul>
+			          </div>
+			        </div>
+			      </nav>
+				</div>
+			    </div>
+			    <!-- nav bar end -->
+			  <!-- Marquee start -->
+			  <div class="row mt-3 " style="background:rgb(235, 165, 61);">
+			    <marquee behavior="2000" direction="" scrollamount="10" onmouseover="stop()" onmouseout="start()">
+			    <div class="col-sm-12 py-2"  style="display: flex;text-align: center;">
+			      
+			      <div class="mx-3 text-center " style="width: 30%;background:rgb(194, 79, 13); text-align: justify;">The portal is easy to access & highly user
+			        <br>friendly for the students & study centres</div>
+			      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);"> The portal is fully secured and accessible<br> 24 x 7 to its authorised users.</div>
+			      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);">		The portal is easy to access & highly user
+				          <br>friendly for the students & study centres</div>
+			    </div>
+			  </marquee>
+			  </div>
+
+			<!-- marquee end -->
+			
+			<h2 class="text-center text-dark">Student Registration Form</h2>
+			<div th:if="${msg}">
+				<p th:text="${msg}" style="color:green;text-align:center"></p>
+			</div>
+            <div class="row" >
+				<div class="col-sm-3" >
+					<img src="image/logo.png" />
+				</div>
+				<div class="col-sm-9">
+					<div class="row">
+						<form class="form-group" th:object="${dto}" method="post">
+							<table class="table table-bordered" style="width: 90%; margin: auto;" border="none">
+								<tr>
+									<td>Enter Enrollment No :</td>
+									<td colspan="3"><input type="text" th:field="${dto.enrollmentNo}"  placeholder="220431010098"  class="form-control" required /></td>
+								
+								</tr>
+								<tr>
+									<td class="sec">Enter Name :</td>
+									<td colspan="3">
+										<input type="text" th:field="${dto.name}" class="form-control " required />
+									</td>
+								</tr>
+							
+								<tr>
+									<td>Enter Father Name:</td>
+									<td colspan="3">
+										<input type="text" th:field="${dto.fName}" class="form-control " required />
+									</td>
+								</tr>
+								<tr>
+									<td class="sec">Enter Mother Name:</td>
+									<td colspan="3"><input type="text" th:field="${dto.mName}" class="form-control" required/> </td>
+								</tr>
+								<tr>
+									<td>Enter Gender:</td>
+									<td>
+										<input type="radio" th:field="${dto.gender}" value="Male" />Male
+										<input type="radio" th:field="${dto.gender}" value="Female" /> Female
+									</td>
+									<td colspan="2"></td>
+								</tr>
+								<tr>
+									<td>Select Program:</td>
+									<td>
+										<select th:field="${dto.program}" class="form-control">
+											<option value="">---select program----</option>
+											<option value="B.Tech.">B.Tech.</option>
+											<option value="B.C.A.">B.C.A.</option>
+											<option value="B.A.">B.A.</option>
+											<option value="B.Com.">B.Com</option>
+											<option value="B.B.A.">B.B.A.</option>
+											<option value="M.Tech.">M.Tech.</option>
+											<option value="M.C.A.">M.C.A.</option>
+											<option value="M.A.">M.A</option>
+										</select>
+									</td>
+								
+									<td class="sec">Select Branch:</td>
+									<td>
+										<select th:field="${dto.branch}" class="form-control">
+											<option value="">---select branch----</option>
+											<option value="CS">COMPUTER SCIENCE</option>
+											<option value="IT">INFORMATION TECHNOLOGY</option>
+											<option value="CA">COMPUTER APPLICATION</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>Select Year:</td>
+									<td>
+										<select th:field="${dto.year}" class="form-control">
+											<option value="">---select year----</option>
+											<option value="First Year">First Year</option>
+											<option value="Second Year">Second Year</option>
+											<option value="Third Year">Third Year</option>
+											<option value="Final Year" >Final Year</option>
+										</select>
+									</td>
+							
+									<td class="sec">Enter Contact No:</td>
+									<td><input type="number" th:field="${dto.contactNo}" class="form-control" required /></td>
+								</tr>
+								<tr>
+									<td>Enter E-Mail Address:</td>
+									<td><input type="email" th:field="${dto.emailAddress}" class="form-control" required /></td>
+								
+									<td class="sec">Enter Password:</td>
+									<td><input type="password" th:field="${dto.password}" class="form-control" required /></td>
+							
+								</tr>
+								<tr>
+									<td class="sec">Enter Address:</td>
+									<td colspan="3">
+										<textarea th:field="${dto.address}" ></textarea>
+									</td>
+								</tr>
+								<tr >
+								   <td colspan="4" class="mx-auto">
+									<button type="submit" class="btn btn-success w-100">Register</button>
+								   </td>
+										
+								
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<html th:replace="base::layout(~{::section})">
+	<head>
+		
+	</head>
+	<body>
+		<section >
+			      <!-- navbar start -->
+				<div class="poster text-white">
+				  <div class="row mt-3 py-2" style="background: gray;background-color: rgba(40, 10, 10, 0.7);height: 15vh;">
+			          <nav class="navbar navbar-expand-lg">
+			          <div class="col-sm-1"></div>
+			          <div class="col-sm-3">
+			          <h4>WELCOME STUDENTS</h4>
+			        </div>
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-7 " >          
+			          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			            <span class="navbar-toggler-icon"></span>
+			          </button>
+			          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			            <ul class="navbar-nav  mb-2 mb-lg-0 ">
+			              <li class="nav-item">
+			                <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/aboutus">Courses</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/registration">Registration</a>
+			              </li>
+			              <li class="nav-item">
+			               <a class="nav-link text-light" href="/stulogin">Student Login</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/adminlogin">Admin Login</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/contactus">Contact Us</a>
+			              </li>
+			            </ul>
+			          </div>
+			        </div>
+			      </nav>
+				</div>
+			    </div>
+			    <!-- nav bar end -->
+			  <!-- Marquee start -->
+			  <div class="row mt-3 " style="background:rgb(235, 165, 61);">
+			    <marquee behavior="2000" direction="" scrollamount="10" onmouseover="stop()" onmouseout="start()">
+			    <div class="col-sm-12 py-2"  style="display: flex;text-align: center;">
+			      
+			      <div class="mx-3 text-center " style="width: 30%;background:rgb(194, 79, 13); text-align: justify;">The portal is easy to access & highly user
+			        <br>friendly for the students & study centres</div>
+			      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);"> The portal is fully secured and accessible<br> 24 x 7 to its authorised users.</div>
+			      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);">		The portal is easy to access & highly user
+				          <br>friendly for the students & study centres</div>
+			    </div>
+			  </marquee>
+			  </div>
+
+			<!-- marquee end -->
+
+		  <h3 class="text-center py-3">Student login</h3>
+		  <div class="container py-5  w-75 m-auto " style="background-color: lightgray;">
+		  		<div th:if="${msg}" class="alert alert-warning alert-dismissible fade show" role="alert">
+		  			 <span th:text="${msg}" style="color:green;text-align:center"></span>
+		  			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		  		</div>
+		  	    <div class="row d-flex align-items-center justify-content-center ">
+		  	      <div class="col-sm-5">
+		  	        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
+		  	      </div>
+				  <div class="col-sm-1"></div>
+		  	      <div class="col-sm-6">
+		  	        <form th:object="${dto}" method="post">
+		  	          <!-- Email input -->
+		  	          <div data-mdb-input-init class="form-outline mb-4">
+		  	            <input type="number" th:field="${dto.enrollmentNo}" id="form1Example13" class="form-control form-control-lg" />
+		  	            <label class="form-label" for="form1Example13">Enrollment Number</label>
+		  	          </div>
+
+		  	          <!-- Password input -->
+		  	          <div data-mdb-input-init class="form-outline mb-4">
+		  	            <input type="password" th:field="${dto.password}" id="form1Example23" class="form-control form-control-lg" />
+		  	            <label class="form-label" for="form1Example23">Password</label>
+		  	          </div>
+
+		  	          <div class="d-flex justify-content-around align-items-center mb-4">
+		  	            <!-- Checkbox -->
+		  	            <div class="form-check">
+		  	              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+		  	              <label class="form-check-label" for="form1Example3"> Remember me </label>
+		  	            </div>
+		  	            <a href="#">Forgot password?</a>
+		  	          </div>
+
+		  	          <!-- Submit button -->
+		  	          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+		  	        </form>
+		  	      </div>
+		  	    </div>
+		  	  </div>
+		</section>
+	</body>
+</html>

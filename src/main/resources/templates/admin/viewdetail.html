@@ -1,0 +1,64 @@
+<html th:replace="~{admin/adminbase::layout(~{::section})}">
+<head></head>
+<body>
+	<section>
+		<h1 class="mx-auto bg-primary"> Student Details</h1>
+		<div class="col-md-7 my-auto d-flex" style="font-size: 40px;">
+			<div class="col-sm-3 ms-5"></div>
+			<div class="ms-5 mx-auto col-sm-4 text-dark ">
+				<table class="text-dark">
+					<tr>
+					  <h4>Name :</h4>
+					
+					  <h4> Father Name :</h4>
+					
+					  <h4> Mother Name :</h4>
+					
+					  <h4>Enrollment No :</h4>
+			
+					  <h4>contact :</h4>
+				
+					  <h4>Course:</h4>
+				
+					  <h4>Branch :</h4>
+					  
+					  <h4>Year :</h4>
+				
+					  <h4>E-mail :</h4>
+				
+					  <h4>Gender :</h4>
+					</tr>
+				</table>
+			</div>
+			<div class="col-sm-4">
+			
+					<table th:each="s:${st}" class="text-dark">
+										<tr class="my-2 ">
+											<h4 class="text-dark" th:text="${s.name}"></h4>
+										
+											<h4 class="text-dark" th:text="${s.fName}"></h4>
+										
+											<h4 class="text-dark"  th:text="${s.mName}"></h4>
+									
+											<h4 class="text-dark" th:text="${s.enrollmentNo}"></h4>
+									
+											<h4 class="text-dark" th:text="${s.contactNo}"></h4>
+											
+											<h4 class="text-dark" th:text="${s.program}"></h4>
+									
+											<h4 class="text-dark" th:text="${s.branch}"></h4>
+									
+											<h4 class="text-dark" th:text="${s.year}"></h4>
+									
+											<h4 class="text-dark" th:text="${s.emailAddress}"></h4>
+									
+											<h4 class="text-dark" th:text="${s.gender}"></h4>
+										</tr>
+									
+									</table>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

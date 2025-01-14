@@ -1,0 +1,88 @@
+<html th:replace="base::layout(~{::section})">
+
+<head>
+
+</head>
+
+<body>
+	<section>
+		      <!-- navbar start -->
+			<div class="poster text-white">
+			  <div class="row mt-3 py-2" style="background: gray;background-color: rgba(40, 10, 10, 0.7);height: 15vh;">
+		          <nav class="navbar navbar-expand-lg">
+		          <div class="col-sm-1"></div>
+		          <div class="col-sm-3">
+		          <h4>WELCOME STUDENTS</h4>
+		        </div>
+		        <div class="col-sm-1"></div>
+		        <div class="col-sm-7 " >          
+		          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		            <span class="navbar-toggler-icon"></span>
+		          </button>
+		          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		            <ul class="navbar-nav  mb-2 mb-lg-0 ">
+		              <li class="nav-item">
+		                <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
+		              </li>
+		              <li class="nav-item">
+		                <a class="nav-link text-light" href="/aboutus">Courses</a>
+		              </li>
+		              <li class="nav-item">
+		                <a class="nav-link text-light" href="/registration">Registration</a>
+		              </li>
+		              <li class="nav-item">
+		               <a class="nav-link text-light" href="/stulogin">Student Login</a>
+		              </li>
+		              <li class="nav-item">
+		                <a class="nav-link text-light" href="/adminlogin">Admin Login</a>
+		              </li>
+		              <li class="nav-item">
+		                <a class="nav-link text-light" href="/contactus">Contact Us</a>
+		              </li>
+		            </ul>
+		          </div>
+		        </div>
+		      </nav>
+			</div>
+		    </div>
+		    <!-- nav bar end -->
+		  <!-- Marquee start -->
+		  <div class="row mt-3 " style="background:rgb(235, 165, 61);">
+		    <marquee behavior="2000" direction="" scrollamount="10" onmouseover="stop()" onmouseout="start()">
+		    <div class="col-sm-12 py-2"  style="display: flex;text-align: center;">
+		      
+		      <div class="mx-3 text-center " style="width: 30%;background:rgb(194, 79, 13); text-align: justify;">The portal is easy to access & highly user
+		        <br>friendly for the students & study centres</div>
+		      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);"> The portal is fully secured and accessible<br> 24 x 7 to its authorised users.</div>
+		      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);">		The portal is easy to access & highly user
+			          <br>friendly for the students & study centres</div>
+		    </div>
+		  </marquee>
+		  </div>
+
+		<!-- marquee end -->
+		<h1 style="text-align: center;color: blue;">This is admin login page</h1>
+		<div class="row bg-primary mx-5">
+			<div class="col-sm-8 bg-white rounded-4 m-4 mx-auto">
+				<div class="text-center">
+					<img alt="image not found" src="image/logo.png" class="w-25" />
+				</div>
+			<div class="px-5">
+				<div th:if="${msg}" class="alert alert-warning alert-dismissible fade show" role="alert">
+			      <span th:text="${msg}" style="color:green;text-align:center"></span>
+				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+				<form method="post" th:object="${dto}">
+					<input type="text" th:field="${dto.userid}" class="form-control rounded-5 my-3" placeholder="Enter your User ID..." />
+					<input type="password" th:field="${dto.password}" class="form-control rounded-5 my-3" placeholder="Enter your password..." />
+					<button type="submit" class="btn btn-primary rounded-5 my-4 w-100 ">Login</button>
+				</form>
+			</div>
+			<div class="text-center mt-3">
+				<a href="#" >Forget Password</a>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

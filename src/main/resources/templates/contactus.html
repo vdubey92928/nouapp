@@ -1,0 +1,139 @@
+<html th:replace="base::layout(~{::section})">
+	<head>
+		
+	</head>
+	<body>
+		
+		<section id="contact" class="contact pb-0">
+			      <!-- navbar start -->
+				<div class="poster text-white">
+				  <div class="row mt-3 py-2" style="background: gray;background-color: rgba(40, 10, 10, 0.7);height: 15vh;">
+			          <nav class="navbar navbar-expand-lg">
+			          <div class="col-sm-1"></div>
+			          <div class="col-sm-3">
+			          <h4>WELCOME STUDENTS</h4>
+			        </div>
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-7 " >          
+			          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			            <span class="navbar-toggler-icon"></span>
+			          </button>
+			          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			            <ul class="navbar-nav  mb-2 mb-lg-0 ">
+			              <li class="nav-item">
+			                <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/aboutus">Courses</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/registration">Registration</a>
+			              </li>
+			              <li class="nav-item">
+			               <a class="nav-link text-light" href="/stulogin">Student Login</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/adminlogin">Admin Login</a>
+			              </li>
+			              <li class="nav-item">
+			                <a class="nav-link text-light" href="/contactus">Contact Us</a>
+			              </li>
+			            </ul>
+			          </div>
+			        </div>
+			      </nav>
+				</div>
+			    </div>
+			    <!-- nav bar end -->
+			  <!-- Marquee start -->
+			  <div class="row mt-3 " style="background:rgb(235, 165, 61);">
+			    <marquee behavior="2000" direction="" scrollamount="10" onmouseover="stop()" onmouseout="start()">
+			    <div class="col-sm-12 py-2"  style="display: flex;text-align: center;">
+			      
+			      <div class="mx-3 text-center " style="width: 30%;background:rgb(194, 79, 13); text-align: justify;">The portal is easy to access & highly user
+			        <br>friendly for the students & study centres</div>
+			      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);"> The portal is fully secured and accessible<br> 24 x 7 to its authorised users.</div>
+			      <div class="mx-3  " style="width: 30%; background:rgb(194, 79, 13);">		The portal is easy to access & highly user
+				          <br>friendly for the students & study centres</div>
+			    </div>
+			  </marquee>
+			  </div>
+
+			<!-- marquee end -->
+			
+		      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+		        <div class="section-title ">
+		          <h2 class="mx-auto">Contact <span>Us</span></h2>
+		        </div>
+		        <div class="row">
+		      <div class="col-sm-5 mt-5 my-5 " style="margin-top: 10px;">
+			  <div class="image-area">
+			  <div class="img-con"><img src="https://nouegyan.in/assets/img/u1.jpg" height="98%"/></div>
+		           </div> 
+		          </div>
+		          <div class="col-sm-7  mt-5 my-5">
+								<div th:if="${msg}">
+									<p th:text="${msg}" style="color:green;text-align:center"></p>
+								</div>
+								<form class="form-group" th:object="${dto}" method="post">
+									<table class="table table-border">
+										<tr>
+											<td>Enter Name :</td>
+											<td>
+												<input type="text" th:field="${dto.name}" class="form-control" required />
+											</td>
+										</tr>
+										<tr>
+											<td>Select Gender :</td>
+											<td>
+												<input type="radio" th:field="${dto.gender}" value="Male" /> Male
+												<input type="radio" th:field="${dto.gender}" value="Female"/> Female
+											</td>
+										</tr>
+										<tr>
+											<td>Enter Address :</td>
+											<td>
+												<textarea th:field="${dto.address}" class="form-control" required></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td>Enter Contact No. </td>
+											<td>
+												<input type="number" th:field="${dto.ContactNo}" class="form-control" required />
+											</td>
+										</tr>
+										<tr>
+											<td>Enter Email ID :</td>
+											<td>
+												<input type="email" th:field="${dto.emailAddress}" class="form-control" required />
+											</td>
+										</tr>
+										<tr>
+											<td>Enter Enquiry : </td>
+											<td>
+												<textarea th:field="${dto.enquiryText}" class="form-control" required ></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>
+												<button type="submit" class="btn-primary">Submit</button>
+											</td>
+										</tr>
+
+									</table>
+								</form>
+
+				    </div>
+		        </div>
+				<div class="row">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d460496.79937032826!2d84.53160368906246!3d25.617167000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed585a72898067%3A0x332ef319c1947f5e!2sNalanda%20Open%20University%20Patna!5e0!3m2!1sen!2sin!4v1732599063057!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+				
+		      </div>
+		    </section>
+  
+		
+	</body>
+</html>
